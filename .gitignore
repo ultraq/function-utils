@@ -1,0 +1,6 @@
+/.idea
+/coverage
+/node_modules
+npm-debug.log
+function-utils.cjs.js*
+function-utils.es.js*

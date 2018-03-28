@@ -1,0 +1,38 @@
+{
+	"name": "@ultraq/function-utils",
+	"version": "0.1.0",
+	"description": "A collection of utilities for JavaScript functions",
+	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ultraq/function-utils.git"
+	},
+	"keywords": [
+		"function",
+		"utilities",
+		"memoize"
+	],
+	"module": "function-utils.es.js",
+	"main": "function-utils.cjs.js",
+	"scripts": {
+		"lint": "eslint '*.js'",
+		"test": "npm run lint && jest",
+		"coverage": "cat ./coverage/lcov.info | coveralls",
+		"build": "npm run build:cjs && npm run build:es",
+		"build:cjs": "BABEL_ENV=cjs babel function-utils.js --out-file function-utils.cjs.js --source-maps",
+		"build:es": "BABEL_ENV=es babel function-utils.js --out-file function-utils.es.js --source-maps",
+		"prepublish": "npm run build"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"coveralls": "^2.12.0",
+		"eslint": "^4.19.1",
+		"eslint-config-ultraq": "^2.0.1",
+		"jest": "^22.4.3"
+	},
+	"engines": {
+		"node": ">=6.5.0"
+	}
+}
