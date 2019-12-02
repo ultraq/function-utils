@@ -25,15 +25,14 @@ API
 
 ### memoize(func)
 
-A higher-order function to apply [memoization](https://en.wikipedia.org/wiki/Memoization).
-Returns a memozied version of the given function.
+A higher-order function to apply [memoization](https://en.wikipedia.org/wiki/Memoization),
+returning a memozied version of the wrapped function.
 
-Shortcomings:
- - Does not intercept recursive calls within the given function to the memoized
-   version.  Existing consumers can achieve this if the function, when defined,
-   is the memoized version,
-   eg: `const myFunction => memoize(() => myFunction())`
- - Not sure what the behaviour is if memoizing a function that receives no
-   parameters.
+If memoizing a recursive function, then memoize and define the function at the
+same time so you can make a call to the memoized function, eg:
+
+```javascript
+const myFunction = memoize(() => myFunction());
+```
 
  - **func**: the function to memoize
