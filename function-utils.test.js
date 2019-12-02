@@ -39,5 +39,15 @@ describe('function-utils', function() {
 			memoizedFunction({ message: 'Goodbye' });
 			expect(functionToMemoize).toHaveBeenCalledTimes(2);
 		});
+
+		test('Functions generate keys based off their contents', function() {
+			const functionToMemoize = jest.fn(value => value);
+			const memoizedFunction = memoize(functionToMemoize);
+
+			memoizedFunction(() => 2 + 2);
+			expect(functionToMemoize).toHaveBeenCalledTimes(1);
+			memoizedFunction(() => 1 + 1);
+			expect(functionToMemoize).toHaveBeenCalledTimes(2);
+		});
 	});
 });
