@@ -29,5 +29,15 @@ describe('function-utils', function() {
 			memoizedFunction(undefined);
 			expect(functionToMemoize).toHaveBeenCalledTimes(2);
 		});
+
+		test('Objects should create distinct keys', function() {
+			const functionToMemoize = jest.fn(value => value);
+			const memoizedFunction = memoize(functionToMemoize);
+
+			memoizedFunction({ message: 'Hello!' });
+			expect(functionToMemoize).toHaveBeenCalledTimes(1);
+			memoizedFunction({ message: 'Goodbye' });
+			expect(functionToMemoize).toHaveBeenCalledTimes(2);
+		});
 	});
 });

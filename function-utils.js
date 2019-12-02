@@ -15,9 +15,12 @@
 export function memoize(func) {
 	const cache = {};
 	return function(...args) {
-		// Ensure null/undefined cause distinct keys instead of just empty strings
 		let key = args
-			.map(arg => arg === null ? 'null' : arg === undefined ? 'undefined' : arg.toString())
+			// Ensure different values cause distinct keys
+			.map(arg =>
+				typeof arg === 'function' ? arg.toString() : // Should the same function in different class instances be distinct?
+				JSON.stringify(arg)
+			)
 			.join('|');
 		if (Object.prototype.hasOwnProperty.call(cache, key)) {
 			return cache[key];
