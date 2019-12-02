@@ -19,9 +19,6 @@ Via npm:
 npm install @ultraq/function-utils --save
 ```
 
-The functions in this module also make use of `Array.from`, which may require a
-polyfill depending on your browser support targets.
-
 
 API
 ---

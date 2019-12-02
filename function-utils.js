@@ -14,11 +14,11 @@
  */
 export function memoize(func) {
 	const cache = {};
-	return function() {
-		let key = Array.from(arguments).join('-');
+	return function(...args) {
+		let key = args.join('-');
 		let result = cache[key];
 		if (!result) {
-			result = func(...arguments);
+			result = func(...args);
 			cache[key] = result;
 		}
 		return result;
