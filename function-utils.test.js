@@ -1,6 +1,8 @@
 /* eslint-env jest */
 import {memoize} from './function-utils';
 
+import addMilliseconds from 'date-fns/addMilliseconds';
+
 /**
  * Tests for the functional programming utilities.
  */
@@ -48,6 +50,31 @@ describe('function-utils', function() {
 			expect(functionToMemoize).toHaveBeenCalledTimes(1);
 			memoizedFunction(() => 1 + 1);
 			expect(functionToMemoize).toHaveBeenCalledTimes(2);
+		});
+
+		test('Dates can be used as parameter arguments', function() {
+			const functionToMemoize = jest.fn(value => value);
+			const memoizedFunction = memoize(functionToMemoize);
+
+			const now = new Date();
+			memoizedFunction(now);
+			expect(functionToMemoize).toHaveBeenCalledTimes(1);
+			memoizedFunction(now);
+			expect(functionToMemoize).toHaveBeenCalledTimes(1);
+
+			// Needs to be at least 1 millisecond different to generate a different key
+			memoizedFunction(addMilliseconds(now, 1));
+			expect(functionToMemoize).toHaveBeenCalledTimes(2);
+		});
+
+		test('Functions without parameters can be memoized too', function() {
+			const functionToMemoize = jest.fn(() => 4);
+			const memoizedFunction = memoize(functionToMemoize);
+
+			memoizedFunction();
+			expect(functionToMemoize).toHaveBeenCalledTimes(1);
+			memoizedFunction();
+			expect(functionToMemoize).toHaveBeenCalledTimes(1);
 		});
 	});
 });
