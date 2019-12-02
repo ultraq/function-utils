@@ -15,12 +15,15 @@
 export function memoize(func) {
 	const cache = {};
 	return function(...args) {
-		let key = args.join('-');
-		let result = cache[key];
-		if (!result) {
-			result = func(...args);
-			cache[key] = result;
+		// Ensure null/undefined cause distinct keys instead of just empty strings
+		let key = args
+			.map(arg => arg === null ? 'null' : arg === undefined ? 'undefined' : arg.toString())
+			.join('|');
+		if (Object.prototype.hasOwnProperty.call(cache, key)) {
+			return cache[key];
 		}
+		let result = func(...args);
+		cache[key] = result;
 		return result;
 	};
 }

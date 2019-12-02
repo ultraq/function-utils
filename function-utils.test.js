@@ -4,7 +4,7 @@ import {memoize} from './function-utils';
 /**
  * Tests for the functional programming utilities.
  */
-describe('utilities/Functions', function() {
+describe('function-utils', function() {
 
 	describe('#memoize', function() {
 
@@ -20,6 +20,14 @@ describe('utilities/Functions', function() {
 			expect(functionToMemoize).toHaveBeenCalledTimes(2);
 		});
 
-	});
+		test('null/undefined arguments are distinct from one another', function() {
+			const functionToMemoize = jest.fn(value => value);
+			const memoizedFunction = memoize(functionToMemoize);
 
+			memoizedFunction(null);
+			expect(functionToMemoize).toHaveBeenCalledTimes(1);
+			memoizedFunction(undefined);
+			expect(functionToMemoize).toHaveBeenCalledTimes(2);
+		});
+	});
 });
