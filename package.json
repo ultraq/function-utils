@@ -31,7 +31,7 @@
 		"date-fns": "^2.8.1",
 		"eslint": "^6.8.0",
 		"eslint-config-ultraq": "^2.3.2",
-		"jest": "^26.0.1"
+		"jest": "^25.5.4"
 	},
 	"engines": {
 		"node": ">=8.0.0"
