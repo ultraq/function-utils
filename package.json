@@ -1,6 +1,6 @@
 {
 	"name": "@ultraq/function-utils",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "A collection of utilities for JavaScript functions",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
 	"license": "Apache-2.0",
@@ -34,6 +34,6 @@
 		"jest": "^25.5.4"
 	},
 	"engines": {
-		"node": ">=8.0.0"
+		"node": ">=10"
 	}
 }
