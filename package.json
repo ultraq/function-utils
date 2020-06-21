@@ -17,7 +17,7 @@
 	"main": "function-utils.cjs.js",
 	"scripts": {
 		"lint": "eslint '*.js'",
-		"test": "npm run lint && jest",
+		"test": "jest",
 		"coverage": "cat ./coverage/lcov.info | coveralls",
 		"build": "npm run build:cjs && npm run build:es",
 		"build:cjs": "BABEL_ENV=cjs babel function-utils.js --out-file function-utils.cjs.js --source-maps",
