@@ -16,22 +16,22 @@
 	"module": "function-utils.es.js",
 	"main": "function-utils.cjs.js",
 	"scripts": {
-		"lint": "eslint '*.js'",
+		"lint": "eslint \"*.js\"",
 		"test": "jest",
 		"coverage": "cat ./coverage/lcov.info | coveralls",
 		"build": "npm run build:cjs && npm run build:es",
 		"build:cjs": "BABEL_ENV=cjs babel function-utils.js --out-file function-utils.cjs.js --source-maps",
 		"build:es": "BABEL_ENV=es babel function-utils.js --out-file function-utils.es.js --source-maps",
-		"prepublish": "npm run build"
+		"prepublishOnly": "npm run build"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.8.4",
-		"@babel/preset-env": "^7.9.6",
+		"@babel/cli": "^7.10.5",
+		"@babel/preset-env": "^7.11.0",
 		"coveralls": "^3.1.0",
 		"date-fns": "^2.8.1",
-		"eslint": "^6.8.0",
-		"eslint-config-ultraq": "^2.3.2",
-		"jest": "^25.5.4"
+		"eslint": "^7.6.0",
+		"eslint-config-ultraq": "^2.3.3",
+		"jest": "^26.2.2"
 	},
 	"engines": {
 		"node": ">=10"
