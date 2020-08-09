@@ -5,6 +5,7 @@ function-utils
 [![Build Status](https://travis-ci.com/ultraq/function-utils.svg?branch=master)](https://travis-ci.com/ultraq/function-utils)
 [![Coverage Status](https://coveralls.io/repos/github/ultraq/function-utils/badge.svg?branch=master)](https://coveralls.io/github/ultraq/function-utils?branch=master)
 [![npm](https://img.shields.io/npm/v/@ultraq/function-utils.svg?maxAge=3600)](https://www.npmjs.com/package/@ultraq/function-utils)
+[![Bundlephobia minified size](https://img.shields.io/bundlephobia/min/@ultraq/function-utils)](https://bundlephobia.com/result?p=@ultraq/function-utils)
 
 A collection of utilities for JavaScript functions.
 
