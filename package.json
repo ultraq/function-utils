@@ -15,6 +15,7 @@
 	],
 	"module": "function-utils.es.js",
 	"main": "function-utils.cjs.js",
+	"sideEffects": false,
 	"scripts": {
 		"lint": "eslint \"*.js\"",
 		"test": "jest",

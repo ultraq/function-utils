@@ -13,10 +13,8 @@ A collection of utilities for JavaScript functions.
 Installation
 ------------
 
-Via npm:
-
 ```
-npm install @ultraq/function-utils --save
+npm install @ultraq/function-utils
 ```
 
 
