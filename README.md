@@ -2,8 +2,8 @@
 function-utils
 ==============
 
-[![Build Status](https://travis-ci.com/ultraq/function-utils.svg?branch=master)](https://travis-ci.com/ultraq/function-utils)
-[![Coverage Status](https://coveralls.io/repos/github/ultraq/function-utils/badge.svg?branch=master)](https://coveralls.io/github/ultraq/function-utils?branch=master)
+[![Build Status](https://github.com/ultraq/function-utils/actions/workflows/build.yml/badge.svg)](https://github.com/ultraq/function-utils/actions)
+[![codecov](https://codecov.io/gh/ultraq/function-utils/graph/badge.svg?token=6055zFpxol)](https://codecov.io/gh/ultraq/function-utils)
 [![npm](https://img.shields.io/npm/v/@ultraq/function-utils.svg?maxAge=3600)](https://www.npmjs.com/package/@ultraq/function-utils)
 [![Bundlephobia minified size](https://img.shields.io/bundlephobia/min/@ultraq/function-utils)](https://bundlephobia.com/result?p=@ultraq/function-utils)
 
