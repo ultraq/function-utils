@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import {memoize} from './function-utils';
 
-import addMilliseconds from 'date-fns/addMilliseconds';
+import {addMilliseconds} from 'date-fns';
 
 /**
  * Tests for the functional programming utilities.

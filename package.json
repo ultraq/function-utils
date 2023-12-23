@@ -1,6 +1,6 @@
 {
 	"name": "@ultraq/function-utils",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"description": "A collection of utilities for JavaScript functions",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
 	"license": "Apache-2.0",
@@ -13,16 +13,26 @@
 		"utilities",
 		"memoize"
 	],
-	"module": "function-utils.es.js",
-	"main": "function-utils.cjs.js",
+	"type": "module",
+	"module": "function-utils.js",
+	"main": "function-utils.cjs",
 	"types": "function-utils.d.ts",
+	"exports": {
+		"import": "./function-utils.js",
+		"require": "./function-utils.cjs",
+		"types": "./function-utils.d.ts"
+	},
+	"files": [
+		"function-utils.js",
+		"function-utils.cjs",
+		"function-utils.d.ts"
+	],
 	"sideEffects": false,
 	"scripts": {
 		"lint": "eslint \"*.js\"",
 		"test": "jest",
-		"build": "npm run build:cjs && npm run build:es && npm run build:dts",
-		"build:cjs": "BABEL_ENV=cjs babel function-utils.js --out-file function-utils.cjs.js --source-maps",
-		"build:es": "BABEL_ENV=es babel function-utils.js --out-file function-utils.es.js --source-maps",
+		"build": "npm run build:cjs && npm run build:dts",
+		"build:cjs": "babel function-utils.js --out-file function-utils.cjs",
 		"build:dts": "tsc --allowJs --declaration --emitDeclarationOnly function-utils.js",
 		"prepublishOnly": "npm run build"
 	},
