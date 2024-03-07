@@ -19,12 +19,12 @@
 	"types": "function-utils.d.ts",
 	"exports": {
 		"import": {
-			"default": "./function-utils.js",
-			"types": "./function-utils.d.ts"
+			"types": "./function-utils.d.ts",
+			"default": "./function-utils.js"
 		},
 		"require": {
-			"default": "./function-utils.cjs",
-			"types": "./function-utils.d.cts"
+			"types": "./function-utils.d.cts",
+			"default": "./function-utils.cjs"
 		}
 	},
 	"files": [
